@@ -16,6 +16,6 @@ echo "<html>
 ln -sf /data/web_static/releases/test /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data
 sed -i '/hostname;/a location /hbnb_static/ {' /etc/nginx/sites-available/default
-sed -i '/location \/hbnb_static\/ {/a alias \/data\/web_static\/current;' /etc/nginx/sites-available/default
-sed -i '/current;/a }' /etc/nginx/sites-available/default
+sed -i '/location \/hbnb_static\/ {/a alias \/data\/web_static\/current\/;' /etc/nginx/sites-available/default
+sed -i '/current\/;/a }' /etc/nginx/sites-available/default
 service nginx restart
