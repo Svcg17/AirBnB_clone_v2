@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 the 3-deploy_web_static.py module
-Fabric script (based on the file 2-do_deploy_web_static.py) that
+Fabric script ((based on the file 2-do_deploy_web_static.py) that
 creates and distributes an archive to  web servers,
 using the function deploy
 """
