@@ -63,3 +63,5 @@ def do_deploy(archive_path):
             /data/web_static/current'.format(noex))
     if re.failed:
         return False
+    print("New version deployed")
+    return True
