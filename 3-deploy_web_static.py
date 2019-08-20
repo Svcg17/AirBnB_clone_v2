@@ -5,7 +5,7 @@ Fabric script ((based on the file 2-do_deploy_web_static.py) that
 creates and distributes an archive to  web servers,
 using the function deploy
 """
-import datetime
+from datetime import datetime
 import os
 from os.path import isfile
 from fabric.api import put, run, env, local
@@ -16,19 +16,13 @@ def do_pack():
     """
     generate a .tgz archive from web_static with do_pack
     """
-    now = datetime.datetime.now()
-    archive = 'web_static_' + str(now.year) + str(now.month) +\
-        str(now.day) + str(now.hour) + str(now.minute) +\
-        str(now.second) + '.tgz'
+    ct = datetime.now().strftime("%Y%m%d%H%M%S")
 
-    if os.path.isdir("versions") is False:
-        local('mkdir -p versions')
+    local("mkdir -p versions")
 
-    local("tar -cvzf versions/{} web_static".format(archive))
-    if (isfile('version/{}'.format(archive))):
-        return ('version/{}'.format(archive))
-    else:
-        return None
+    local("tar -cvzf versions/web_static_{}.tgz web_static".format(ct))
+    if isfile("versions/web_static_{}.tgz".format(ct)):
+        return "versions/web_static_{}.tgz".format(ct)
 
 
 def do_deploy(archive_path):
@@ -66,16 +60,16 @@ def do_deploy(archive_path):
             /data/web_static/current'.format(noex))
     if re.failed:
         return False
+
     print("New version deployed")
     return True
 
 
 def deploy():
-    """creates and distributes an archive to your web servers, using
-    the function deploy
+    """Creates and distributes an archive to web servers
+    Returns: Value of do_deploy, False if no archive created
     """
-    path = do_pack()
-    if not path:
+    archive_path = do_pack()
+    if archive_path is None:
         return False
-    re = do_deploy(path)
-    return re
+    return do_deploy(archive_path)
