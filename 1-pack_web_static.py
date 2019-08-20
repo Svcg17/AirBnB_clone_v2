@@ -15,8 +15,9 @@ def do_pack():
     generate a .tgz archive from web_static with do_pack
     """
     now = datetime.datetime.now()
-    archive = 'web_static_' + str(now.year) + str(now.month) +
-    str(now.day) + str(now.hour) + str(now.minute) + str(now.second) + '.tgz'
+    archive = 'web_static_' + str(now.year) + str(now.month) +\
+        str(now.day) + str(now.hour) + str(now.minute) +\
+        str(now.second) + '.tgz'
 
     if os.path.isdir("versions") is False:
         local('mkdir -p versions')
