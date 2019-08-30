@@ -24,7 +24,7 @@ class State(BaseModel, Base):
             """Returns cities obj
             """
             newlist = []
-            for city in models.storage.all(City):
+            for city in models.storage.all(City).values:
                 if city.state_id == self.id:
                     newlist.append(city)
             return (newlist)
