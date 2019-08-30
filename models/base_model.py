@@ -29,25 +29,24 @@ class BaseModel:
             created_at: creation date
             updated_at: updated date
         """
+        self.id = str(uuid.uuid4())
+        self.created_at = self.updated_at = datetime.now()
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key != "__class__":
                     setattr(self, key, value)
-            if 'id' not in kwargs:
-                self.id = str(uuid.uuid4())
-        else:
-            self.id = str(uuid.uuid4())
-            self.created_at = self.updated_at = datetime.now()
-
+        
     def __str__(self):
         """returns a string
         Return:
             returns a string of class name, id, and dictionary
         """
+        dict_cpy = self.__dict__.copy()
+        del dict_cpy['_sa_instance_state']
         return "[{}] ({}) {}".format(
-            type(self).__name__, self.id, self.__dict__)
+            type(self).__name__, self.id, dict_cpy)
 
     def __repr__(self):
         """return a string representaion

@@ -3,6 +3,8 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
+from models.city import City
+import models
 import os
 
 
@@ -24,7 +26,7 @@ class State(BaseModel, Base):
             """Returns cities obj
             """
             newlist = []
-            for city in models.storage.all(City).values:
+            for city in models.storage.all(City).values():
                 if city.state_id == self.id:
                     newlist.append(city)
             return (newlist)
