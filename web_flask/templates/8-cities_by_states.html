@@ -8,13 +8,14 @@
                 <UL>
                         {% for state in i|sort(attribute='name') %}
                         <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
-                        {% endfor %}
 
                         <UL>
                                 {% for city in j %}
+                                {% if city.state_id == state.id %}
                                 <LI>{{ city.state_id }}: <B>{{ city.name }}</B></LI>
-                                {% endfor %}
                         </UL>
+                        {% endif % }
+                        {% endfor % }
                         </LI>
                 </UL>
         </BODY>
