@@ -13,8 +13,7 @@ def cities_by_states():
     """ Displays an HTTML page
     """
     return render_template('8-cities_by_states.html',
-                           i=storage.all('State').values(),
-                           j=storage.all('City').values())
+                           i=storage.all('State').values())
 
 
 @app.teardown_appcontext
