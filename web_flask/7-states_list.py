@@ -5,7 +5,6 @@ Starts a Flask web application
 """
 from flask import Flask, escape, request, render_template
 from models import storage
-from models.state import State
 app = Flask(__name__)
 
 
@@ -13,7 +12,8 @@ app = Flask(__name__)
 def state_hmtl():
     """ Displays an HTTML page
     """
-    return render_template('7-states_list.html', state=storage.all('State').values())
+    return render_template('7-states_list.html',
+                           state=storage.all('State').values())
 
 
 @app.teardown_appcontext
@@ -21,7 +21,6 @@ def storage_app(var=None):
     """ removes the current SQLAlchemy Session
     """
     storage.close()
-
 
 
 if __name__ == '__main__':
