@@ -10,12 +10,12 @@
                         <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
 
                         <UL>
-                                {% for city in j %}
+                        {% for city in j %}
                                 {% if city.state_id == state.id %}
                                 <LI>{{ city.state_id }}: <B>{{ city.name }}</B></LI>
                         </UL>
-                        {% endif % }
-                        {% endfor % }
+                                {% endif %}
+                        {% endfor %}
                         </LI>
                 </UL>
         </BODY>
