@@ -5,6 +5,7 @@ Starts a Flask web application
 """
 from flask import Flask, escape, request, render_template
 from models import storage
+from models.state import State
 app = Flask(__name__)
 
 
@@ -13,7 +14,7 @@ def state_hmtl():
     """ Displays an HTTML page
     """
     return render_template('7-states_list.html',
-                           i=storage.all('State').values())
+                           i=storage.all(State).values())
 
 
 @app.teardown_appcontext
