@@ -48,7 +48,11 @@ class DBStorage:
                 newdict[key] = i
             # print(newdict[key])
         else:
-            for i in self.__session.query(eval(cls)).all():
+            if isinstance(cls, str):
+                s = self.__session.query(eval(cls)).all()
+            else:            
+                s = self.__session.query(cls).all()
+            for i in s:
                 key = i.__class__.__name__ + "." + i.id
                 newdict[key] = i
         return (newdict)
