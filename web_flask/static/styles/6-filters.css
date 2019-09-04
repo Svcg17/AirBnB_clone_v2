@@ -54,6 +54,20 @@
 	z-index: +1;
 }
 
+.popover ul {
+    list-style-type: none;
+    max-height: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.amenities .popover {
+    padding: 20px 0;
+    margin-left: -5px;
+    margin-top: 1%;
+    padding-bottom: 57px;
+}
+
 .amenities .popover li{
 	margin-top: 12px;
 	padding-left: 25px;
@@ -61,6 +75,8 @@
 
 .popover ul li{
 	list-style-type: none;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 .locations .popover ul{
 	margin-top: 8px;
