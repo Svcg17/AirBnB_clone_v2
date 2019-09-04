@@ -5,6 +5,7 @@ Starts a Flask web application
 """
 from flask import Flask, escape, request, render_template
 from models import storage
+from models.state import State
 app = Flask(__name__)
 
 
@@ -13,7 +14,7 @@ def cities_by_states():
     """ Displays an HTTML page
     """
     return render_template('9-states.html',
-                           i=storage.all('State').values())
+                           i=storage.all(State).values())
 
 
 @app.route('/states/<id>', strict_slashes=False)
@@ -22,7 +23,7 @@ def cities_by_states_by_id(id):
     Displays an HTML page
     """
     return render_template('9-states.html',
-                           j=storage.all('State').values(), id=id)
+                           i=storage.all(State).values(), id=id)
 
 
 @app.teardown_appcontext
