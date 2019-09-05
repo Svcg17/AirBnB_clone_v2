@@ -74,6 +74,7 @@ button:hover {
 
 .popover li {
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .amenities:hover .popover,
