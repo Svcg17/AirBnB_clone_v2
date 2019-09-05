@@ -35,9 +35,9 @@ Write a script that starts a Flask web application:
 
 Your web application must be listening on `0.0.0.0`, port `5000`
 Routes:
-`/`: display “Hello HBNB!”
-`/hbnb`: display “HBNB”
-You must use the option `strict_slashes=False` in your route definition
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- You must use the option `strict_slashes=False` in your route definition
 ```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.1-hbnb_route
 * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
@@ -54,9 +54,9 @@ Write a script that starts a Flask web application:
 
 Your web application must be listening on `0.0.0.0`, port `5000`
 Routes:
-`/`: display “Hello HBNB!”
-`/hbnb`: display “HBNB”
-`/c/<text>`: display “C ” followed by the value of the text variable (replace underscore _ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ” followed by the value of the text variable (replace underscore _ symbols with a space )
 You must use the option strict_slashes=False in your route definition
 ```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.2-c_route
@@ -82,12 +82,12 @@ Write a script that starts a Flask web application:
 
 Your web application must be listening on 0.0.0.0, port 5000
 Routes:
-`/`: display “Hello HBNB!”
-`/hbnb`: display “HBNB”
-`/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore _ symbols with a space )
-`/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore _ symbols with a space )
-The default value of text is `“is cool”`
-You must use the option `strict_slashes=False` in your route definition
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore _ symbols with a space )
+- `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore _ symbols with a space )
+- The default value of text is `“is cool”`
+- You must use the option `strict_slashes=False` in your route definition
 ```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.3-python_route
 * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
@@ -112,9 +112,9 @@ Routes:
 * `/hbnb`: display “HBNB”
 * `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore _ symbols with a space )
 * `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore _ symbols with a space )
-The default value of text is “is cool”
+- The default value of text is “is cool”
 * `/number/<n>`: display “n is a number” only if n is an integer
-You must use the option strict_slashes=False in your route definition
+- You must use the option strict_slashes=False in your route definition
 ```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.4-number_route
 * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
@@ -145,11 +145,11 @@ Routes:
 - /hbnb: display “HBNB”
 - /c/<text>: display “C ”, followed by the value of the text variable (replace underscore _ symbols with a space )
 - /python/(<text>): display “Python ”, followed by the value of the text variable (replace underscore _ symbols with a space )
-The default value of text is “is cool”
+- The default value of text is “is cool”
 - /number/<n>: display “n is a number” only if n is an integer
 - /number_template/<n>: display a HTML page only if n is an integer:
 -  H1 tag: “Number: n” inside the tag BODY
-You must use the option strict_slashes=False in your route definition
+- You must use the option strict_slashes=False in your route definition
 
 ```
 guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.5-number_template
@@ -343,7 +343,7 @@ Routes:
 - LI tag: description of one State: <state.id>: <B><state.name></B>
 - Import this 7-dump to have some data
 - You must use the option strict_slashes=False in your route definition
-__IMPORTANT__
+- __IMPORTANT__
 
 - Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository (Task)
 - Make sure all tables are created when you run `echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py`
@@ -418,7 +418,7 @@ Routes:
 - LI tag: description of one City: <city.id>: <B><city.name></B>
 - Import this 7-dump to have some data
 - You must use the option strict_slashes=False in your route definition
-__IMPORTANT__
+- __IMPORTANT__
 
 - Make sure you have a running and valid `setup_mysql_dev.sql` in your AirBnB_clone_v2 repository (Task)
 - Make sure all tables are created when you run `echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py`
@@ -618,7 +618,7 @@ If a State object is found with this id:
 - H1 tag: “Not found!”
 - You must use the option strict_slashes=False in your route definition
 - Import this `7-dump` to have some data
-__IMPORTANT__
+- __IMPORTANT__
 
 - Make sure you have a running and valid `setup_mysql_dev.sql` in your AirBnB_clone_v2 repository (Task)
 - Make sure all tables are created when you run `echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py`
@@ -738,7 +738,7 @@ Routes:
 - State, City and Amenity objects must be loaded from DBStorage and sorted by name (A->Z)
 - You must use the option strict_slashes=False in your route definition
 - Import this 10-dump to have some data
-__IMPORTANT__
+- __IMPORTANT__
 
 - Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository (Task)
 - Make sure all tables are created when you run `echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py`
